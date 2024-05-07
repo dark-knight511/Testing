@@ -2,20 +2,47 @@ package practice;
 
 public class ToUppercase {
     public static void main(String[] args) {
-        char var = 'A';
-        System.out.println(ConvertTouppercase(var));
+
+
+        System.out.println(tc1singlechar());
+        System.out.println(tc2negative());
     }
 
-    public static char ConvertTouppercase(char var) {
-        if (var >= 65 && var <= 90) {
-            return (char) (var + 32);
-        } else if (var >= 97 && var <= 122) {
-            return (char) (var - 32);
+    public static String convertToUppercase(String var) {
+        String result = "";
+        for (int i = 0; i < var.length(); i++) {
+            if (var.charAt(i) >= 97 && var.charAt(i) <= 122) {
+                result += (char) (var.charAt(i) - 32);
+
+
+            } else {
+                result += var.charAt(i);
+            }
+
+        }
+        return result;
+    }
+//Method1
+    public static boolean tc1singlechar() {
+        String expected = "A";
+        String input = "a";
+        String result = convertToUppercase(input);
+        if (result.equals(expected)) {
+            return true;
         } else {
-            return var;
+            return false;
         }
 
     }
+    public static boolean tc2negative() {
+        String expected = null;
+        String input = null;
+        String result = convertToUppercase(input);
+        if (result.equals(expected)) {
+            return true;
+        } else {
+            return false;
+        }
 
-
+    }
 }
